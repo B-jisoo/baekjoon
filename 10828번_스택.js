@@ -8,42 +8,33 @@
 // empty: 스택이 비어있으면 1, 아니면 0을 출력한다.
 // top: 스택의 가장 위에 있는 정수를 출력한다. 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.
 
-class Stack {
-  constructor() {
-    this.arr = [];
-  }
-  push(data) {
-    this.arr.push(data);
-  }
-  pop() {
-    if (this.arr[this.arr.length - 1]) {
-      console.log(this.arr[this.arr.length - 1]);
-      return this.arr.pop();
-    } else {
-      console.log(-1);
+const fs = require('fs');
+const input = fs.readFileSync("/dev/stdin").toString().trim().split('\n');
+const N = parseInt(input.shift(), 10);
+let stack = [];
+let answer = [];
+
+for (let i = 0; i < N; i++) {
+    switch (input[i]) {
+        case 'pop':
+            answer.push(stack.pop() || -1);
+            break;
+
+        case 'top':
+            answer.push(stack[stack.length - 1] || -1);
+            break;
+
+        case 'size':
+            answer.push(stack.length);
+            break;
+
+        case 'empty':
+            answer.push(stack[0] ? 0 : 1);
+            break;
+
+        default:
+            stack.push(Number(input[i].split(' ')[1]));
+            break;
     }
-  }
-  size() {
-    return this.arr.length;
-  }
-  empty() {
-    if (this.arr.length) {
-      console.log(0);
-    } else {
-      console.log(1);
-    }
-  }
-  top() {
-    if (this.arr[this.arr.length - 1]) {
-      console.log(this.arr[this.arr.length - 1]);
-    } else {
-      console.log(-1);
-    }
-  }
 }
-
-const stack = new Stack();
-
-stack.push(1);
-stack.push(2);
-stack.top();
+console.log(answer.join('\n'));
