@@ -15,3 +15,10 @@
 # I ma yppah yadot
 # eW tnaw ot niw eht tsrif ezirp
 
+t = int(input()) # 테스트 케이스 받기
+
+for i in range(t): 
+  c = input().split(); #테스트 케이스만큼 문장 받기 
+  for j in c:
+    print(j[::-1], end=' ') #array[start : end : step]에 따라 역순으로 출력
+  print()
