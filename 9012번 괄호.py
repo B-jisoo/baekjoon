@@ -34,12 +34,12 @@ T = int(input());
 for i in range(T):  #테스트 케이스만큼 입력 받기
   PS = input()       # PS는 괄호를 입력받는 변수입니다.
   count = 0
-  for j in PS:
+  for j in PS:      #VPS는 '(' 와 ')'의 수가 같아야 성립하기 때문에 '('를 입력 받았을땐 count + 1를, ')'를  입력 받았을땐 count - 1를 해서 최종적으로 count 값이 0이 되면 YES가 출력되게 만든다
     if j=='(' :
       count += 1
     elif j==')':
       count -= 1
-    if count<0:
+    if count<0:     # '(' 보다 ')'가 많아지는 순간 VPS는 성립하지 않기때문에 NO값을 출력 후 프로그램 종료
       print("NO")
       break
   if count>0:
