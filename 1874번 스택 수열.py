@@ -50,12 +50,12 @@ X = True
 for _ in range(T):            #테스트 케이스만큼 입력 받기
     num = int(input())
 
-    while count < num:        #스택 쌓으며 + 출력
+    while count < num:        #스택 쌓으며 result에 + append
         count += 1
         stack.append(count)
         result.append("+")
 
-    if stack[-1] == num:      #pop하며 - 출력
+    if stack[-1] == num:      #pop하며 result에 - append
         stack.pop()
         result.append("-")
     else:
