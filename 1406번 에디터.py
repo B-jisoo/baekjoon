@@ -38,9 +38,9 @@ for _ in range(int(sys.stdin.readline())):          #테스트 케이스 만큼 
       st1.append(st2.pop())                        #st2에 값이 존재한다면 st2을 pop과 동시에 st1에 append
   elif command[0] == "B":
     if st1:
-      st1.pop()                                    #B이 입력되면 st1를 pop
+      st1.pop()                                    #B가 입력되면 st1를 pop
   else:
-    st1.append(command[1])                         #P이 입력되면 두번째 문자열을 append
+    st1.append(command[1])                         #P가 입력되면 두번째 문자열을 append
 
 st1.extend(reversed(st2))                           #
 print(''.join(st1))
