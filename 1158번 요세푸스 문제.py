@@ -19,3 +19,18 @@
 
 
 
+N, K = map(int, input().split())
+N = list(range(1, N + 1))                 
+C = []
+num = K -1
+
+while N:
+  if len(N) > num:
+    C.append(N.pop(num))
+    num += K - 1
+  elif len(N) <= num:
+    num = num % len(N)
+    C.append(N.pop(num))
+    num += K - 1
+  
+print('<{}>'.format(', '.join(map(str, C))))
