@@ -23,17 +23,29 @@
 
 
 
-c = input().split(); #테스트 케이스만큼 문장 받기 
+S = list(input()) 
 P = False
-for j in c:
+word=''
+result=''
 
-  if j == ">":
-    P=False
-  elif P:
-    print(j)
-    continue
-  elif j == "<":
-    P = True 
-    print(j)
-  print(j[::-1], end=' ') #array[start : end : step]에 따라 역순으로 출력
+for i in S:
+  if P==False:
+    if i=='<':
+      P=True
+      word=word+i
+    elif i==' ':
+      word=word+i
+      result=result+word
+      word=''
+    else:
+      word=i+word
+
+  elif P==True:
+    word=word+i
+    if i=='>':
+      P=False
+      result=result+word
+      word=''
+
+print(result+word)
 
