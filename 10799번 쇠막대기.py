@@ -40,24 +40,21 @@
 
 B = list(input())
 count = 0
-L = 0
+L = []
 
+for i in range(len(B)):
+    if B[i] == '(': 
+        L.append('(')
+        
+    else:
+        if B[i-1] == '(': 
+            L.pop()
+            count += len(L)
+            
+        else:
+            L.pop() 
+            count += 1
 
-
-for i in B :
-  if i =="(":
-    count += 1
-    P = False
-
-  elif i == ")":
-      if P == False:
-        count -= 1
-        L += count
-        P = True
-      else :
-        count -= 1
-        P = True
-
-print(L)
+print(count)
 
     
