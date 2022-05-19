@@ -43,11 +43,11 @@ count = 0
 L = []
 
 for i in range(len(B)):
-    if B[i] == '(': 
+    if B[i] == '(':                    # ( 를 입력 받았을 경우 L에 append
         L.append('(')
         
-    else:
-        if B[i-1] == '(': 
+    else:                              # )를 입력 받았을 경우 
+        if B[i-1] == '(':              # B[i-1]번째가 ( 였을 경우, pop하고 count에 L의 길이를 더한다.
             L.pop()
             count += len(L)
             
