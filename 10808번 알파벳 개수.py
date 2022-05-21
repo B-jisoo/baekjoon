@@ -13,3 +13,15 @@
 # 예제 출력 1 
 # 1 1 0 0 1 0 0 0 0 1 1 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0
 
+
+S = input()
+C = [0 for i in range(26)]
+
+
+for i in S:
+  ASCII = ord(i.upper()) -65
+  C[ASCII] += 1 
+print(" ".join(map(str, C)))
+
+
+
