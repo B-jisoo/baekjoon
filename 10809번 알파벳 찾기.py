@@ -15,3 +15,14 @@
 # 예제 출력 1 
 # 1 0 -1 -1 2 -1 -1 -1 -1 4 3 -1 -1 7 5 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 
+S = input()
+C = [-1 for i in range(26)]
+count = 0
+for i in S:
+  count += 1
+  asci=ord(i.upper()) -65
+
+  if C[asci] == -1:
+    C[asci] += count
+
+print(" ".join(map(str,C)))
