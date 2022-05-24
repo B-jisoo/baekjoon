@@ -21,3 +21,22 @@
 # 5 6 0 16
 # 0 8 9 0
 
+import sys
+
+while True:
+  C = sys.stdin.readline().rstrip('\n')
+
+  if not C:
+    break
+  lower, upper, num, space = 0, 0, 0, 0
+
+  for i in C:
+    if i.isupper():
+      upper += 1
+    elif i.islower():
+      lower+=1
+    elif i.isdigit():
+      num +=1 
+    elif i.isspace():
+      space +=1
+  print(lower, upper, num, space)
