@@ -18,10 +18,17 @@
 # 70
 # 3
 # 35
-result= 0
 
-for _ in range(int(input())):
-  N= list(map(int,input().split()))
-  for j in N:
-    result += j
-  print( result - N[0]) 
+
+import sys
+import math
+n=int(input())
+
+for i in range(n):
+    arr=list(map(int, sys.stdin.readline().split()))
+    total=0
+    for j in range(1,len(arr)):
+        for k in range(j+1,len(arr)):
+            total+=math.gcd(arr[j],arr[k])
+
+    print(total)
