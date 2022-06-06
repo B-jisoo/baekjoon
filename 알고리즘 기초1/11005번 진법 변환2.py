@@ -17,13 +17,13 @@
 # 예제 출력 1 
 # ZZZZZ
 
-nums='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
-N,B=map(int,input().split())
-ans=''
-
-while N:
-    ans=nums[N%B]+ans
-    N//=B
-
-print(ans)
+N,B = map(int,input().split())
+ans = ""
+while N!=0:
+    a = N % B
+    if a >= 10:
+        ans += chr(a+55)
+    else:
+        ans += str(a)
+    N //= B
+print(ans[::-1])
